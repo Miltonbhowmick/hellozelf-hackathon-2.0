@@ -264,8 +264,10 @@ class WebTraffic:
             author_username = self.get_username_from_tiktok_video_url(video_link_element['href'])
             video_id = self.get_video_id_from_tiktok_video_url(video_link_element['href'])
             # Description below the video card
-            description_box = video_box.find_next_sibling('div').find("a")
-            if description_box is None:
+            description_box = video_box.find_next_sibling('div')
+            if description_box:
+                description_box = description_box.find("a")
+            else:
                 return None
             video_caption = description_box['title']
 
