@@ -13,14 +13,9 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 import threading
 import socket
-import io
-from PIL import Image
-from itertools import product
 from bs4 import BeautifulSoup
 import json
-import string
 import pandas as pd
-import copy
 
 
 CHROME_DRIVER_PATH = "./chromedriver.exe"
@@ -334,9 +329,9 @@ class WebTraffic:
                 "followers": 0,
                 "likes": 0,
             }
-            core_df[index_no] = parent_row
+            core_df.loc[index_no] = parent_row
             index_no+=1            
-            core_df.to_csv(f"hashtag_data.csv", index=False)
+            core_df.to_csv("hashtag_data.csv", index=False)
 
 
     def run_through_hashcode(self, hash_code) -> None:
