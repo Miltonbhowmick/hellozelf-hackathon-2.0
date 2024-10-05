@@ -265,6 +265,8 @@ class WebTraffic:
             video_id = self.get_video_id_from_tiktok_video_url(video_link_element['href'])
             # Description below the video card
             description_box = video_box.find_next_sibling('div').find("a")
+            if description_box is None:
+                return None
             video_caption = description_box['title']
 
             data = {
