@@ -21,7 +21,7 @@ import pandas as pd
 CHROME_DRIVER_PATH = "./chromedriver.exe"
 TARGET_WEBSITE_URL = "https://www.tiktok.com"
 
-PAGE_SCROLL_DOWN_LIMIT = 0
+PAGE_SCROLL_DOWN_LIMIT = 50
 
 FOLLOWER_LIMIT = 1000
 LIKE_LIMIT = 100
@@ -384,6 +384,3 @@ if __name__ == "__main__":
     scraper_logger = ScraperLogger()
     hash_code_list = ['traveltok',]
     run_scraper(hash_code_list[0])
-
-    # categories_scraper_threads()
-    # csv_scraper_threads()
